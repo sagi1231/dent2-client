@@ -1,0 +1,10 @@
+export enum WriterTemplate {
+  PILAR = "PILAR",
+  HOW_TO = "HOW_TO",
+  TIPS = "TIPS",
+  LISTING = "LISTING",
+  MISTAKE_LIST = "MISTAKE_LIST",
+  DEFINITION = "DEFINITION",
+  BEGINNER_GUIDE = "BEGINNER_GUIDE",
+  IRIT = "IRIT",
+}

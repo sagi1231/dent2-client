@@ -1,0 +1,8 @@
+export enum AppIntegrationApplicationType {
+  EMAIL = "EMAIL",
+  GOOGLEANALYTICS = "GOOGLEANALYTICS",
+  LINKEDIN = "LINKEDIN",
+  FACEBOOK = "FACEBOOK",
+  INSTAGRAM = "INSTAGRAM",
+  WHATSAPP = "WHATSAPP",
+}

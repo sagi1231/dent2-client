@@ -1,0 +1,5 @@
+export enum GoalType {
+  CONVERSION = "CONVERSION",
+  INFORMATIVE = "INFORMATIVE",
+  SELLER = "SELLER",
+}

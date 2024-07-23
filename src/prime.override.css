@@ -1,0 +1,65 @@
+.p-tabmenu .p-tabmenu-nav, .p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link, .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link{
+    background: transparent !important;
+    font-weight: 400;
+    padding-left: 0;
+    padding-right:2.5rem;
+
+}
+
+.p-tabmenu-nav.p-reset a, .p-tabmenu .p-tabmenu-nav{
+    font-weight: 400;
+}
+
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link:not(.p-disabled):focus {
+
+    box-shadow: none;
+}
+
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem:hover a{
+    color: #6366F1 !important;
+
+}
+
+.p-tabmenu .p-tabmenu-nav {
+    border: 1px solid transparent;
+}
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link{
+    border-color: transparent !important;
+}
+
+.p-tabmenuitem.p-highlight span:before{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: red;
+}
+
+.p-button.p-button-secondary:enabled:focus {
+    box-shadow: none;
+}
+
+.p-button.p-button-icon-only {
+    width: 2.2rem;
+    padding: 0.75rem 0;
+}
+
+.p-button.p-button-icon-only.p-button-rounded {
+    border-radius: 50%;
+    height: 2.2rem;
+}
+
+.p-button.p-button-secondary.p-button-text, .p-buttonset.p-button-secondary > .p-button.p-button-text, .p-splitbutton.p-button-secondary > .p-button.p-button-text, .p-fileupload-choose.p-button-secondary.p-button-text {
+    color: #060b12;
+}
+
+/**  override table CSS **/
+.p-datatable .p-datatable-thead > tr > th, .p-datatable .p-datatable-tbody > tr > td{
+    background: none;
+    border-bottom: 1px solid #e2e8f0;
+
+}
+
+.p-datatable span.p-column-title{
+ font-size:14px;
+ font-weight:500;   
+}
