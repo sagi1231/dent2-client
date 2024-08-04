@@ -102,14 +102,7 @@ const TopMenu: React.FC = () => {
       label: "הגדרות משתמש",
 
       command: () => {
-        navigate(`/user-preferences/account-settings`);
-      },
-    },
-    {
-      label: "מסלולים וחיובים",
-
-      command: () => {
-        navigate(`/user-preferences/subscription-manage`);
+        navigate(`/overview/user-settings`);
       },
     },
 
