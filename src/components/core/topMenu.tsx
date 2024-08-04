@@ -21,14 +21,12 @@ import IconButton from "../common/IconButton";
 import { Tooltip } from "primereact/tooltip";
 import { Divider } from "primereact/divider";
 import useNavigator from "../../hooks/useNavigator";
-import { PackageType } from "../../core/types/packageType";
-import Badge from "../common/Badge";
-import { ReactComponent as Logo } from "../../assets/Logo/BlackIcon.svg";
 
 const TopWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0 30px;
+  flex-direction: row-reverse;
   align-items: center;
   background: white;
   border-radius: 0px;

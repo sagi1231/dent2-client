@@ -1,0 +1,9 @@
+export enum ContentCardType {
+  INSTAGRAM = "INSTAGRAM",
+  FACEBOOK = "FACEBOOK",
+  TWITTER = "TWITTER",
+  LINKEDIN = "LINKEDIN",
+  THREADS = "THREADS",
+  EMAIL = "EMAIL",
+  SMS = "SMS",
+}

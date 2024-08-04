@@ -15,7 +15,7 @@ const AfterLoginPage: React.FC = () => {
     //   return navigate(`/websites/new?hideExit=true`);
     // }
 
-    // return navigate(`/websites/${savedWebsite.id}/`);
+    return navigate(`/overview`);
   }, [navigate]);
 
   return <Preloader />;

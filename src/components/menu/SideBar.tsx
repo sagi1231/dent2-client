@@ -6,12 +6,9 @@ import Button from "../common/form/Button";
 import React, { useMemo, useState } from "react";
 import { ReactComponent as PlusIcon } from "../../assets/Icons/Plus.svg";
 import { ReactComponent as AddArticle } from "../../assets/Icons/AddArticle.svg";
-import { useRecoilState, useRecoilValue } from "recoil";
-import { userState } from "../../state/userState";
-import { PackageType } from "../../core/types/packageType";
-import { useParams } from "react-router";
-import Preloader from "../common/Preloader";
+
 import useNavigator from "../../hooks/useNavigator";
+import WebsiteTabsNav from "../website/WebsiteTabsNav";
 
 const Wrapper = styled.div`
   background: white;
@@ -110,6 +107,7 @@ const SideBar: React.FC = () => {
             צור מאמר{" "}
           </Button>
           <Divider className="mt-0 mb-0" />
+          <WebsiteTabsNav />
         </MenuWrapper>
       </div>
       <PackageWrapper>

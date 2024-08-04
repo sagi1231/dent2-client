@@ -11,6 +11,9 @@ import AfterLoginPage from "./pages/AfterLoginPage";
 
 import ErrorPage from "./pages/ErrorPage";
 import AfterPaymentPage from "./pages/AfterPaymentPage";
+import Overview from "./pages/websitePages/Overview";
+import AutomaticWriterTabsNav from "./components/website/AutomaticWriterTabsNav";
+import UserPreferences from "./pages/websitePages/UserPreferences";
 
 const routes: Route[] = [
   {
@@ -39,26 +42,75 @@ const routes: Route[] = [
     displayName: "Update Password",
   },
   {
-    path: "/company/new",
-    Page: <LoginPage />,
+    path: "/overview/bam",
+    Page: <>bam</>,
+    isProtected: true,
+    displayName: "Writer Scheduler",
+    subMenu: <AutomaticWriterTabsNav />,
+  },
+  {
+    path: "/overview/bam/managment",
+    Page: <>bam managment</>,
+    isProtected: true,
+    displayName: "Writer Scheduler",
+    subMenu: <AutomaticWriterTabsNav />,
+  },
+  {
+    path: "/overview/bam/status",
+    Page: <>bam status</>,
+    isProtected: true,
+    displayName: "Writer Scheduler",
+    subMenu: <AutomaticWriterTabsNav />,
+  },
+  {
+    path: "/overview/bam/logs",
+    Page: <>bam logs</>,
+    isProtected: true,
+    displayName: "בם - עדכונים",
+    subMenu: <AutomaticWriterTabsNav />,
+  },
+  {
+    path: "/overview/bam/dashboard",
+    Page: <>bam dashboard</>,
+    isProtected: true,
+    displayName: "בם - דאשבורד",
+    subMenu: <AutomaticWriterTabsNav />,
+  },
+  {
+    path: "/overview/tornado",
+    Page: <>מערבל שחקים</>,
+    isProtected: true,
+    displayName: "טורנדו",
+  },
+  {
+    path: "/overview/questions",
+    Page: <>שאלונים</>,
+    isProtected: true,
+    displayName: "טורנדו",
   },
   {
     path: "/",
     Page: <AfterLoginPage />,
     isProtected: true,
   },
+
   {
-    path: "/websites",
-    Page: <Homepage />,
+    path: "/overview/",
+    Page: <Overview />,
     isProtected: true,
-    hideGlobalLayout: true,
-    displayName: "My Websites",
+    displayName: "Website Overview",
   },
+  {
+    path: "/overview/user-settings",
+    Page: <UserPreferences />,
+    isProtected: true,
+    displayName: "Website Overview",
+  },
+
   {
     path: "/support",
     Page: <p>עמוד תמיכה</p>,
     isProtected: true,
-
     displayName: "Support",
   },
 

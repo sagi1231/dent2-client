@@ -8,21 +8,6 @@ import IsMobile from "./IsMobile";
 import PrivateLayout from "./PrivateLayout";
 
 const PageWrapper: React.FC<{ Route: Route }> = ({ Route }) => {
-  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 768);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   useEffect(() => {
     const pageTitle = (Route.displayName || "App") + " - Ghostwrite";
     document.title = pageTitle;

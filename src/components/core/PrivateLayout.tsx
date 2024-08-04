@@ -43,7 +43,7 @@ const SubMenuWrapper = styled.div`
   height: calc(100vh - 115px);
   padding-right: 20px;
   border-right: solid 1px var(--border-color);
-  margin-right: 20px;
+  margin-right: 2px;
 `;
 
 const Wrapper = styled.div`

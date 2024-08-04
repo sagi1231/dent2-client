@@ -11,6 +11,6 @@ export interface User extends EntityBase {
 
   pNumber: string;
 
-  permissions: [string];
+  permissions: string;
   isActive: boolean;
 }
