@@ -4,10 +4,6 @@ import styled from "styled-components";
 
 import FadeIn from "../components/common/FadeIn";
 import CardSkeleton from "../components/common/skeletons/CardSkeleton";
-import { useLocation, useSearchParams } from "react-router-dom";
-import ConnectCmsModal from "../components/modals/ConnectCmsModal";
-import Button from "../components/common/form/Button";
-import Announcement from "../components/common/Announcement";
 
 const Title = styled.h1`
   font-size: 48px;
@@ -34,7 +30,7 @@ const ContentWrapper = styled.div`
 const Homepage: React.FC = () => {
   return (
     <>
-      <MinimalTopMenu showWebsitesDropdown />
+      {/* <MinimalTopMenu showWebsitesDropdown /> */}
       <ContentWrapper>
         <div className="flex justify-content-between align-items-center">
           <div>
@@ -50,8 +46,7 @@ const Homepage: React.FC = () => {
         </div>
 
         <FadeIn>
-          <React.Suspense fallback={<CardSkeleton />}>
-          </React.Suspense>
+          <React.Suspense fallback={<CardSkeleton />}></React.Suspense>
         </FadeIn>
       </ContentWrapper>
     </>

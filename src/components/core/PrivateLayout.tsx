@@ -1,12 +1,9 @@
 import TopMenu from "./topMenu";
-import { useLocation } from "react-router";
 import styled from "styled-components";
 import React, { useEffect, useState } from "react";
-import BreadCrumbs from "./BreadCrumbs/BreadCrumbs";
-import SlideIn from "../common/SlideIn";
+
 import SideBar from "../menu/SideBar";
-import { useRecoilValue } from "recoil";
-import { userState } from "../../state/userState";
+
 import Preloader from "../common/Preloader";
 
 interface Props {

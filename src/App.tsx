@@ -12,7 +12,6 @@ import { RecoilRoot } from "recoil";
 import styled from "styled-components";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import GlobalModalContainer from "./components/modals/globalModal/globalModalContainer";
 import AppWrapper from "./wrappers/AppWrapper";
 
 const Wrapper = styled.div`
@@ -38,7 +37,6 @@ function App() {
               })}
             </Routes>
           </BrowserRouter>
-          <GlobalModalContainer />
           <ToastContainer />
         </AppWrapper>
       </RecoilRoot>

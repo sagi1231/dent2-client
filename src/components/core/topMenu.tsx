@@ -12,10 +12,6 @@ import { useNavigate, useParams } from "react-router";
 import GWButton from "../common/form/Button";
 import Link from "../common/Link";
 import { Button } from "primereact/button";
-import Announcement from "../common/Announcement";
-import { Dropdown } from "primereact/dropdown";
-import WebsiteDropdownItem from "../common/form/WebsitesDropdownMenu/WebsiteDropdownItem";
-import WebsiteDropdownMenu from "../common/form/WebsitesDropdownMenu/WebsiteDropdownMenu";
 
 import { ReactComponent as GlobeIcon } from "../../assets/Icons/Globe.svg";
 import { ReactComponent as TeamIcon } from "../../assets/Icons/Team.svg";
@@ -74,7 +70,6 @@ const RoleText = styled.span`
   font-size: 10px;
   letter-spacing: -0.3px;
 `;
-
 
 const TopMenu: React.FC = () => {
   const user = useRecoilValue(userState);
@@ -149,9 +144,7 @@ const TopMenu: React.FC = () => {
   return (
     <>
       <TopWrapper>
-        <React.Suspense fallback={<></>}>
-          <WebsiteDropdownMenu />
-        </React.Suspense>
+        <React.Suspense fallback={<></>}></React.Suspense>
         <div>
           <div className="flex align-items-center">
             <Tooltip target=".plugins-icon" />
