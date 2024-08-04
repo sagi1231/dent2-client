@@ -13,12 +13,13 @@ import FormStyle from "../components/common/form/FormStyle";
 import Button from "../components/common/form/Button";
 import { ReactComponent as Logo } from "../assets/Logo/ColoredLogo.svg";
 import { SignupRequestData } from "../core/services/requests/signup/signupRequestData";
-import companyService from "../core/services/company.service";
 import Link from "../components/common/Link";
 import { Checkbox } from "primereact/checkbox";
 import AppConfig from "../config/appConfig";
 import ErrorMessage from "../components/common/ErrorMessage";
 import AuthHeader from "../components/auth/AuthHeader";
+import userService from "../core/services/user.service";
+import { CreateUserRequestData } from "../core/services/requests/createUser/createUserRequestData copy";
 
 const LoginPageWrapper = styled.div`
   height: 100vh;
@@ -221,23 +222,18 @@ const Signup: React.FC = () => {
     setError,
     formState: { errors },
     control,
-  } = useForm<SignupRequestData>();
+  } = useForm<CreateUserRequestData>();
   const setUserState = useSetRecoilState(userState);
   const [isLoading, setIsLoading] = useState(false);
   const [queryParams] = useSearchParams();
   const navigate = useNavigate();
-  const onSubmit: SubmitHandler<SignupRequestData> = async (data) => {
+  const onSubmit: SubmitHandler<CreateUserRequestData> = async (data) => {
     try {
       setIsLoading(true);
       const captcha = (document as any).grecaptcha as any;
-      const token = await captcha.enterprise.execute(
-        "6Lf6qDUpAAAAAOqUoyZcgH4wkZJHtZqSlfhBpEsM",
-        { action: "LOGIN" }
-      );
 
-      const res = await companyService.signup({
+      const res = await userService.createUser({
         ...data,
-        captchaToken: token,
       });
 
       console.log(res);
@@ -279,29 +275,29 @@ const Signup: React.FC = () => {
         </OrText>
         <div className="w-full mb-5">
           <div className="flex">
-            <div className="mb-5 mr-5">
+            <div className="mb-5 ml-5">
               <label>שם פרטי</label>
 
               <InputText
-                {...register("firstName", {
+                {...register("firstname", {
                   required: true,
                   maxLength: 20,
                 })}
                 type="text"
                 placeholder="יהודה"
-                className={errors.firstName ? "p-invalid" : ""}
+                className={errors.firstname ? "p-invalid" : ""}
               />
             </div>
             <div className="mb-5">
               <label>שם משפחה</label>
 
               <InputText
-                {...register("lastName", {
+                {...register("lastname", {
                   required: true,
                   maxLength: 20,
                 })}
                 placeholder="כהן"
-                className={errors.lastName ? "p-invalid" : ""}
+                className={errors.lastname ? "p-invalid" : ""}
               />
             </div>
           </div>
@@ -309,19 +305,16 @@ const Signup: React.FC = () => {
           <label>דואר אלקטרוני</label>
           <InputText
             autoComplete="off"
-            {...register("email", {
+            {...register("pNumber", {
               required: true,
-              maxLength: 40,
-              pattern: {
-                value: RegexValidations.email,
-                message: "כתובת אימייל לא חוקית",
-              },
+              maxLength: 7,
+              minLength: 7,
             })}
             type="text"
-            placeholder="Yehuda@Cohen.com"
-            className={errors.email ? "p-invalid" : ""}
+            placeholder="XXXXXXX"
+            className={errors.pNumber ? "p-invalid" : ""}
           />
-          <ErrorMessage>{errors.email?.message}</ErrorMessage>
+          <ErrorMessage>{errors.pNumber?.message}</ErrorMessage>
         </div>
         <div className="w-full mb-5">
           <label>סיסמה</label>
@@ -343,16 +336,6 @@ const Signup: React.FC = () => {
           />
           <ErrorMessage>{errors.password?.message}</ErrorMessage>
         </div>
-        <StyledCheckboxWrapper>
-          <Controller
-            control={control}
-            name="signedForNewsletter"
-            render={({ field }) => (
-              <Checkbox checked={field.value} onChange={field.onChange} />
-            )}
-          />
-          <label>אני מסכים להצטרף לרשימת התפוצה של Neword</label>
-        </StyledCheckboxWrapper>
 
         <Button
           onClick={handleSubmit(onSubmit)}

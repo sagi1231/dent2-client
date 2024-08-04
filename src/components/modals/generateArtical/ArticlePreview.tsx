@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { TriggerWorkerRequestData } from "../../../core/services/requests/worker/triggerWorkerRequestData";
 import CardTitle from "../../common/CardTitle";
-import Templates from "../../../pages/websitePages/Templates";
 import { WriterTemplate } from "../../../core/types/writerTemplates";
 import Badge from "../../common/Badge";
 import { Skeleton } from "primereact/skeleton";

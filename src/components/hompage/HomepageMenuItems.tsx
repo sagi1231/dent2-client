@@ -1,7 +1,6 @@
 import DashboardIcon from "@mui/icons-material/DashboardOutlined";
-import { MenuItemProps } from "../menu/types/MenuItemProps";
 
-const HomepageMenuItems: MenuItemProps[] = [
+const HomepageMenuItems = [
   {
     displayName: "Websites",
     route: "/websites",

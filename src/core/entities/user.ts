@@ -3,12 +3,14 @@ import { Company } from "./company";
 import { EntityBase } from "./entityBase";
 
 export interface User extends EntityBase {
-  email: string;
-  firstName: string;
-  lastName: string;
+  firstname: string;
+  lastname: string;
+  hashedPassword: string;
+
   role: UserRole;
-  phone: string;
-  companyId: string;
+
+  pNumber: string;
+
+  permissions: [string];
   isActive: boolean;
-  company: Company;
 }

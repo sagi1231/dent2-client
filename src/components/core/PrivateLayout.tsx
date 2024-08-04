@@ -5,14 +5,9 @@ import React, { useEffect, useState } from "react";
 import BreadCrumbs from "./BreadCrumbs/BreadCrumbs";
 import SlideIn from "../common/SlideIn";
 import SideBar from "../menu/SideBar";
-import UpgradePackage from "../modals/UpgradePackage";
 import { useRecoilValue } from "recoil";
 import { userState } from "../../state/userState";
 import Preloader from "../common/Preloader";
-import WebsiteTabsNav from "../website/WebsiteTabsNav";
-import Announcement from "../common/Announcement";
-import Button from "../common/form/Button";
-import SubMenuLayout from "../common/SubMenuLayout";
 
 interface Props {
   children: React.ReactElement;
@@ -66,18 +61,6 @@ const Content = styled.div`
 `;
 
 const PrivateLayout: React.FC<Props> = ({ children, subMenu, hideSideBar }) => {
-  const [showPackagesModal, setShowPackagesModal] = useState(false);
-  const user = useRecoilValue(userState);
-
-  useEffect(() => {
-    if (
-      user?.company &&
-      (!user.company.Subscription || !user.company.Subscription.isActive)
-    ) {
-      setShowPackagesModal(true);
-    }
-  }, [user?.company, user?.company?.Subscription?.isActive]);
-
   return (
     <div className="flex">
       {!hideSideBar && (

@@ -22,9 +22,8 @@ const AuthHeader: React.FC = () => {
   return (
     <div className="flex align-items-center flex-column">
       <Logo />
-
       <Title>
-        צור תוכן מהשורה הראשונה ללא מאמץ, באופן <span>אוטונומי.</span>{" "}
+        הדרך הסלולה, <span>בשבילך.</span>{" "}
       </Title>
     </div>
   );

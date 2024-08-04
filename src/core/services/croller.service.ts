@@ -1,6 +1,6 @@
 import { ServiceBase } from "./service.base";
 import { Language } from "../types/language";
-import { ScanWebsiteResponse } from "./requests/createWebsite/scanWebsiteResponse";
+import { ScanWebsiteResponse } from "./requests/createUser/scanWebsiteResponse";
 
 class CrollerService extends ServiceBase {
   prefix = "/croller";

@@ -1,8 +1,6 @@
 export interface SignupRequestData {
-  email: string;
+  pNumber: string;
   password: string;
-  signedForNewsletter: boolean;
-  firstName: string;
-  lastName: string;
-  captchaToken: string;
+  firstname: string;
+  lastname: string;
 }

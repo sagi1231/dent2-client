@@ -1,10 +1,10 @@
 import { User } from "../core/entities/user";
 import { atom, atomFamily, selector, selectorFamily } from "recoil";
-import userService from "../core/services/user.service";
+import authService from "../core/services/auth.service";
 
 export const userStateSelector = selector<User>({
   key: "userStateSelector",
-  get: () => userService.whoAmI(),
+  get: () => authService.me(),
 });
 
 export const userState = atom<User>({
@@ -12,13 +12,13 @@ export const userState = atom<User>({
   default: userStateSelector,
 });
 
-export const usersState = selector<User[]>({
-  key: "usersState",
-  get: ({ get }) => userService.getUsers(),
-});
+// export const usersState = selector<User[]>({
+//   key: "usersState",
+//   get: ({ get }) => AuthService.getUsers(),
+// });
 
 // SUPER ADMIN ONLY!
-export const allUsersState = atomFamily<User[], string>({
-  key: "allUsersState",
-  default: (query: string) => userService.getAllUsers(query),
-});
+// export const allUsersState = atomFamily<User[], string>({
+//   key: "allUsersState",
+//   default: (query: string) => authService.getAllUsers(query),
+// });

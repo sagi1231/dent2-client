@@ -3,13 +3,11 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import FadeIn from "../components/common/FadeIn";
-import WebsitesList from "../components/websites/WebsitesList";
 import CardSkeleton from "../components/common/skeletons/CardSkeleton";
 import { useLocation, useSearchParams } from "react-router-dom";
 import ConnectCmsModal from "../components/modals/ConnectCmsModal";
 import Button from "../components/common/form/Button";
 import Announcement from "../components/common/Announcement";
-import MinimalTopMenu from "../components/website/createWebsite/MinimalTopMenu";
 
 const Title = styled.h1`
   font-size: 48px;
@@ -53,7 +51,6 @@ const Homepage: React.FC = () => {
 
         <FadeIn>
           <React.Suspense fallback={<CardSkeleton />}>
-            <WebsitesList />
           </React.Suspense>
         </FadeIn>
       </ContentWrapper>

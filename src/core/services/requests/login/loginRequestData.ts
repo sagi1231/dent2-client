@@ -1,4 +1,4 @@
 export interface LoginRequestData {
-  username: string;
+  pNumber: string;
   password: string;
 }

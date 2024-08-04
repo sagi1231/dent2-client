@@ -18,6 +18,7 @@ import { User } from "../core/entities/user";
 import AppConfig from "../config/appConfig";
 import AuthHeader from "../components/auth/AuthHeader";
 import ErrorMessage from "../components/common/ErrorMessage";
+import authService from "../core/services/auth.service";
 
 const LoginPageWrapper = styled.div`
   height: 100vh;
@@ -263,19 +264,16 @@ const LoginPage: React.FC = () => {
         <div className="w-full mb-5">
           <label>אימייל</label>
           <InputText
-            {...register("username", {
+            {...register("pNumber", {
               required: true,
-              maxLength: 40,
-              pattern: {
-                value: RegexValidations.email,
-                message: "כתובת אימייל לא חוקית",
-              },
+              maxLength: 7,
+              minLength: 7,
             })}
             type="text"
-            placeholder="כתובת דואר אלקטרוני"
-            className={errors.username ? "p-invalid" : ""}
+            placeholder="מספר אישי"
+            className={errors.pNumber ? "p-invalid" : ""}
           />
-          <ErrorMessage>{errors.username?.message}</ErrorMessage>
+          <ErrorMessage>{errors.pNumber?.message}</ErrorMessage>
         </div>
         <div className="w-full mb-5">
           <label>סיסמה</label>

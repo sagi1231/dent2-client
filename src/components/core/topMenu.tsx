@@ -13,7 +13,6 @@ import GWButton from "../common/form/Button";
 import Link from "../common/Link";
 import { Button } from "primereact/button";
 import Announcement from "../common/Announcement";
-import { announcementState } from "../../state/announcementState";
 import { Dropdown } from "primereact/dropdown";
 import WebsiteDropdownItem from "../common/form/WebsitesDropdownMenu/WebsiteDropdownItem";
 import WebsiteDropdownMenu from "../common/form/WebsitesDropdownMenu/WebsiteDropdownMenu";
@@ -25,7 +24,6 @@ import { ReactComponent as DownloadIcon } from "../../assets/Icons/Download.svg"
 import IconButton from "../common/IconButton";
 import { Tooltip } from "primereact/tooltip";
 import { Divider } from "primereact/divider";
-import UpgradePackage from "../modals/UpgradePackage";
 import useNavigator from "../../hooks/useNavigator";
 import { PackageType } from "../../core/types/packageType";
 import Badge from "../common/Badge";
@@ -77,35 +75,12 @@ const RoleText = styled.span`
   letter-spacing: -0.3px;
 `;
 
-const UpgradePackageButton = styled(Button)`
-  font-weight: bold;
-
-  font-size: 12px;
-
-  /* font-size: 14px; */
-  margin-bottom: 30px;
-  background: var(--primary-purple);
-  color: white;
-  align-items: center;
-  justify-content: center;
-
-  svg {
-    fill: white;
-    width: 15px;
-    height: 15px;
-  }
-`;
 
 const TopMenu: React.FC = () => {
   const user = useRecoilValue(userState);
   const navigate = useNavigator();
   const menuLeft = useRef<Menu>(null);
   const [upgradePackageModal, setUpgradePackageModal] = useState(false);
-
-  const isTrial = useMemo(
-    () => user.company.Subscription.type === PackageType.TRIAL,
-    [user.company.Subscription.type]
-  );
 
   let items = [
     {
@@ -116,11 +91,11 @@ const TopMenu: React.FC = () => {
             className="w-full p-link flex align-items-center p-3"
           >
             <div className="flex flex-column">
-              <EmailText>{user?.email}</EmailText>
+              <EmailText>{user?.pNumber}</EmailText>
               <RoleText>{user?.role}</RoleText>
             </div>
             <AvatarStyled
-              label={user?.email.at(0)?.toLocaleUpperCase()}
+              label={user?.firstname.at(0)?.toLocaleUpperCase()}
               shape="circle"
               className="mr-2"
             />
@@ -171,8 +146,6 @@ const TopMenu: React.FC = () => {
     },
   ];
 
-  const announcementStateValue = useRecoilValue(announcementState);
-
   return (
     <>
       <TopWrapper>
@@ -181,20 +154,6 @@ const TopMenu: React.FC = () => {
         </React.Suspense>
         <div>
           <div className="flex align-items-center">
-            {isTrial ? (
-              <GWButton
-                onClick={() => setUpgradePackageModal(true)}
-                arrowPlacement="right"
-                textColor="pink"
-              >
-                שדרג עכשיו{" "}
-              </GWButton>
-            ) : (
-              <></>
-              // <Badge icon={<LogoStyled />} textColor="text" bgColor="yellow">
-              //   <strong>Ghostwrite Premium</strong>
-              // </Badge>
-            )}
             <Tooltip target=".plugins-icon" />
             <IconButton
               icon={<DownloadIcon />}
@@ -231,7 +190,7 @@ const TopMenu: React.FC = () => {
               aria-haspopup
             >
               <AvatarStyled
-                label={user?.firstName.at(0)?.toLocaleUpperCase()}
+                label={user?.firstname.at(0)?.toLocaleUpperCase()}
                 shape="circle"
               />
               <IconStyle className="pi pi-angle-down"></IconStyle>
@@ -239,19 +198,8 @@ const TopMenu: React.FC = () => {
           </div>
         </div>
       </TopWrapper>
-      {announcementStateValue && (
-        <Announcement>
-          <div className="flex align-items-center">
-            {announcementStateValue}
-          </div>
-        </Announcement>
-      )}
 
-      {upgradePackageModal && (
-        <React.Suspense>
-          <UpgradePackage onHide={() => setUpgradePackageModal(false)} />
-        </React.Suspense>
-      )}
+      {upgradePackageModal && <React.Suspense></React.Suspense>}
     </>
   );
 };

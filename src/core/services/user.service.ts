@@ -1,10 +1,10 @@
 import { User } from "../entities/user";
+import { CreateUserRequestData } from "./requests/createUser/createUserRequestData copy";
 import { LoginRequestData } from "./requests/login/loginRequestData";
 import { LoginResponseData } from "./requests/login/loginResponseData";
 import { ResetPasswordRequestData } from "./requests/resetPassword/resetPasswordRequestData";
 import { CompleteSignupRequestData } from "./requests/signup/completeSignupRequestData";
 import { InviteUserRequestData } from "./requests/signup/inviteUserRequestData";
-import { SignupRequestData } from "./requests/signup/signupRequestData";
 import { ValidatePhoneCodeRequest } from "./requests/signup/validatePhoneCodeRequest";
 import { UpdatePasswordRequestData } from "./requests/updatePassword/updatePasswordRequestData";
 import { ServiceBase } from "./service.base";
@@ -18,7 +18,9 @@ class UserService extends ServiceBase {
   login(data: LoginRequestData) {
     return this.post<LoginResponseData>("/login", data);
   }
-
+  createUser(data: CreateUserRequestData) {
+    return this.post<User>("/createUser", data);
+  }
   inviteUser(data: InviteUserRequestData) {
     return this.post<User>("/invite", data);
   }
