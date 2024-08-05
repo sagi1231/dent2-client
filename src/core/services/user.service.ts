@@ -1,5 +1,5 @@
 import { User } from "../entities/user";
-import { CreateUserRequestData } from "./requests/createUser/createUserRequestData copy";
+import { CreateUserRequestData } from "./requests/createUser/createUserRequestData";
 import { LoginRequestData } from "./requests/login/loginRequestData";
 import { LoginResponseData } from "./requests/login/loginResponseData";
 import { ResetPasswordRequestData } from "./requests/resetPassword/resetPasswordRequestData";

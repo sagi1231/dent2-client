@@ -19,7 +19,7 @@ import AppConfig from "../config/appConfig";
 import ErrorMessage from "../components/common/ErrorMessage";
 import AuthHeader from "../components/auth/AuthHeader";
 import userService from "../core/services/user.service";
-import { CreateUserRequestData } from "../core/services/requests/createUser/createUserRequestData copy";
+import { CreateUserRequestData } from "../core/services/requests/createUser/createUserRequestData";
 
 const LoginPageWrapper = styled.div`
   height: 100vh;
@@ -302,7 +302,7 @@ const Signup: React.FC = () => {
             </div>
           </div>
 
-          <label>דואר אלקטרוני</label>
+          <label>מספר אישי</label>
           <InputText
             autoComplete="off"
             {...register("pNumber", {

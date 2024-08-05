@@ -11,5 +11,5 @@ export interface CreateUserRequestData {
 
   pNumber: string;
 
-  permission: [string];
+  permission: string[];
 }
