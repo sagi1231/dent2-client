@@ -14,6 +14,8 @@ import AfterPaymentPage from "./pages/AfterPaymentPage";
 import Overview from "./pages/websitePages/Overview";
 import AutomaticWriterTabsNav from "./components/website/AutomaticWriterTabsNav";
 import UserPreferences from "./pages/websitePages/UserPreferences";
+import BamUpdates from "./components/bam/Updates";
+import MalshabBamGrid from "./components/bam/BamGrid";
 
 const routes: Route[] = [
   {
@@ -43,7 +45,7 @@ const routes: Route[] = [
   },
   {
     path: "/overview/bam",
-    Page: <>bam</>,
+    Page: <BamUpdates />,
     isProtected: true,
     displayName: "Writer Scheduler",
     subMenu: <AutomaticWriterTabsNav />,
@@ -57,14 +59,14 @@ const routes: Route[] = [
   },
   {
     path: "/overview/bam/status",
-    Page: <>bam status</>,
+    Page: <MalshabBamGrid />,
     isProtected: true,
     displayName: "Writer Scheduler",
     subMenu: <AutomaticWriterTabsNav />,
   },
   {
     path: "/overview/bam/logs",
-    Page: <>bam logs</>,
+    Page: <BamUpdates />,
     isProtected: true,
     displayName: "בם - עדכונים",
     subMenu: <AutomaticWriterTabsNav />,

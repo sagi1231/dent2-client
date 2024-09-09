@@ -237,6 +237,8 @@ const Signup: React.FC = () => {
       });
 
       console.log(res);
+
+      console.log(res);
       setUserState(res);
       const redirectPath = queryParams.get("redirect") || "/";
       navigate(redirectPath);

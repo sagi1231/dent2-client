@@ -16,7 +16,7 @@ class UserService extends ServiceBase {
   }
 
   login(data: LoginRequestData) {
-    return this.post<LoginResponseData>("/login", data);
+    return this.post<any>("/login", data);
   }
   createUser(data: CreateUserRequestData) {
     return this.post<User>("/createUser", data);

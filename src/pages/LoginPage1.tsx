@@ -221,14 +221,17 @@ const LoginPage: React.FC = () => {
   const [queryParams] = useSearchParams();
   const location = useLocation();
   const onSubmit: SubmitHandler<LoginRequestData> = async (data) => {
+    const res = await authService.login(data);
+
     try {
       setIsLoading(true);
-      const res = await userService.login(data);
+      console.log("rs", res);
+
       setUserState(res.user);
       const redirectPath = queryParams.get("redirect") || "/";
       navigate(redirectPath);
     } catch (err) {
-      setError("root", {});
+      // throw err;
     } finally {
       setIsLoading(false);
     }

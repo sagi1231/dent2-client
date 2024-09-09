@@ -138,34 +138,7 @@ const TopMenu: React.FC = () => {
         <React.Suspense fallback={<></>}></React.Suspense>
         <div>
           <div className="flex align-items-center">
-            <Tooltip target=".plugins-icon" />
-            <IconButton
-              icon={<DownloadIcon />}
-              width={"17"}
-              className="ml-3 plugins-icon"
-              path={`/plugins`}
-              data-pr-tooltip="הורד תוספים רלוונטיים ל-CMS שלך"
-              data-pr-position="bottom"
-            />
-            <Tooltip target=".teams-icon" />
-            <IconButton
-              icon={<TeamIcon />}
-              width={"17"}
-              className="ml-3 teams-icon"
-              path={`/team`}
-              data-pr-tooltip="נהל את חברי הצוות שלך"
-              data-pr-position="bottom"
-            />
-            <Tooltip target=".websites-icon" />
-            <IconButton
-              global
-              icon={<GlobeIcon />}
-              width={"17"}
-              className="ml-3 websites-icon"
-              path="/websites"
-              data-pr-tooltip="כל העסקים"
-              data-pr-position="bottom"
-            />
+            {/* add top menu items here */}
             <Menu model={items} popup ref={menuLeft} id="popup_menu_left" />
             <ButtonAvatarStyled
               iconPos="right"

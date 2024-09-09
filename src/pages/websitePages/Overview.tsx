@@ -52,6 +52,17 @@ const Title = styled.div`
   margin: 10px 0;
 `;
 
+const TypeTitle = styled.div`
+  color: var(--Main-TitleColor, #0a2540);
+  leading-trim: both;
+  text-edge: cap;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 1.5rem */
+  letter-spacing: -0.045rem;
+  margin: 10px 0;
+`;
 const Overview: React.FC = () => {
   const { websiteId } = useParams();
   const navigate = useNavigator();
@@ -63,6 +74,8 @@ const Overview: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const [searchParams] = useSearchParams();
+
+  const docBoxesFiltered = [{}];
 
   useEffect(() => {
     const connectCms = searchParams.get("connectCms");
@@ -137,14 +150,33 @@ const Overview: React.FC = () => {
           </div>
           <div className="col-4"></div>
 
-          <div className="col-12">
-            <Title>במיוחד בשבילך</Title>
+          <div className="grid w-full">
+            {/* {docBoxesFiltered.map((doc, index) => (
+                <>
+                  {doc.platformType !==
+                    docBoxesFiltered[index - 1]?.platformType && (
+                    <div className="col-12">
+                      <TypeTitle>
+                        {platformTypeText[doc.platformType]}
+                      </TypeTitle>
+                    </div>
+                  )}
+                  <div
+                    onClick={() => createDoc(doc.type)}
+                    key={index}
+                    className="col-2"
+                  >
+                    <ContentCard
+                      title={doc.title}
+                      description={doc.description}
+                      image={doc.image}
+                      type={doc.platformType}
+                      highlightTitleTerm={searchTerm}
+                    />
+                  </div>
+                </>
+              ))} */}
           </div>
-          <div className="grid w-full"></div>
-
-          <div className="col-12">{/* <KeywordsTable /> */}</div>
-
-          <div className="col-12">{/* <LastGeneratedArticles /> */}</div>
         </div>
       </>
     </>

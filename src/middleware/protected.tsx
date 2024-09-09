@@ -26,6 +26,8 @@ const Protected: React.FC<{
       );
     case "hasValue":
       const user = userSelector.getValue()!!;
+      console.log("user", user);
+
       if (!user.isActive) {
         return <Navigate to={`/complete-signup`} />;
       }

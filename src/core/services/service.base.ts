@@ -17,6 +17,8 @@ export abstract class ServiceBase {
           withCredentials: true,
         })
       ).data;
+      console.log(res);
+
       if (!res.isSuccessfull) throw new Error("request failed");
       return res.data;
     } catch (err: any) {

@@ -97,7 +97,7 @@ const SideBar: React.FC = () => {
           </Link>
         </LogoWrapper>
         <MenuWrapper>
-          <Button
+          {/* <Button
             icon={<AddArticle />}
             primary
             className="w-full"
@@ -106,7 +106,7 @@ const SideBar: React.FC = () => {
           >
             צור מאמר{" "}
           </Button>
-          <Divider className="mt-0 mb-0" />
+          <Divider className="mt-0 mb-0" /> */}
           <WebsiteTabsNav />
         </MenuWrapper>
       </div>

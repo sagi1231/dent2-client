@@ -5,8 +5,6 @@ import { ReactComponent as InsightsIcon } from "../../../assets/Icons/WebsiteIco
 import { ReactComponent as KeywordsIcon } from "../../../assets/Icons/WebsiteIcons/Keyword.svg";
 import { ReactComponent as WriterSettingsIcon } from "../../../assets/Icons/WebsiteIcons/Writer.svg";
 import { ReactComponent as IntegrationIcon } from "../../../assets/Icons/WebsiteIcons/Integration.svg";
-import { ReactComponent as ScheduleIcon } from "../../../assets/Icons/WebsiteIcons/Schedule.svg";
-import { ReactComponent as TemplatesIcon } from "../../../assets/Icons/WebsiteIcons/Templates.svg";
 import { ReactComponent as AutomaticIcon } from "../../../assets/Icons/WebsiteIcons/Automatic.svg";
 import { ReactComponent as BusinessIcon } from "../../../assets/Icons/WebsiteIcons/BusinessInfo.svg";
 import HistoryIcon from "@mui/icons-material/HistoryOutlined";
@@ -29,7 +27,6 @@ const WebsiteMenuItems: MenuItemProps[] = [
     displayName: "שאלונים",
     route: "/questions",
     icon: <AutomaticIcon />,
-    parentRoute: "/autowriter",
   },
 
   {

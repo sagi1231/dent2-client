@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 import SideBar from "../menu/SideBar";
 
 import Preloader from "../common/Preloader";
-
 interface Props {
   children: React.ReactElement;
   subMenu?: React.ReactElement;

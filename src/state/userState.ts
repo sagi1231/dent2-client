@@ -10,7 +10,7 @@ export const userStateSelector = selector<User>({
 
 export const userState = atom<User>({
   key: "userState",
-  default: undefined,
+  default: userStateSelector,
 });
 
 export const usersState = selector<User[]>({
