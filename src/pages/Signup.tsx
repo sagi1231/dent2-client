@@ -11,7 +11,7 @@ import { Message } from "primereact/message";
 import RegexValidations from "../core/validation/regexValidations";
 import FormStyle from "../components/common/form/FormStyle";
 import Button from "../components/common/form/Button";
-import { ReactComponent as Logo } from "../assets/Logo/ColoredLogo.svg";
+import { ReactComponent as Logo } from "../assets/Logo/DnetLogo.svg";
 import { SignupRequestData } from "../core/services/requests/signup/signupRequestData";
 import Link from "../components/common/Link";
 import { Checkbox } from "primereact/checkbox";

@@ -1,5 +1,5 @@
 import { InputText } from "primereact/inputtext";
-import { ReactComponent as GoogleIcon } from "../assets/Icons/ColoredGoogle.svg";
+import { ReactComponent as SsoIcon } from "../assets/Icons/ssoLogo.svg";
 import { useCallback, useEffect, useState } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import userService from "../core/services/user.service";
@@ -12,7 +12,7 @@ import { Message } from "primereact/message";
 import RegexValidations from "../core/validation/regexValidations";
 import FormStyle from "../components/common/form/FormStyle";
 import Button from "../components/common/form/Button";
-import { ReactComponent as Logo } from "../assets/Logo/ColoredLogo.svg";
+import { ReactComponent as Logo } from "../assets/Logo/DnetLogo.svg";
 import Link from "../components/common/Link";
 import { User } from "../core/entities/user";
 import AppConfig from "../config/appConfig";
@@ -143,7 +143,7 @@ const RegularText = styled.div`
   text-transform: capitalize;
 `;
 
-const GoogleButton = styled(Link)`
+const SsoButton = styled(Link)`
   border-radius: 6px;
   border: 1px solid var(--input-border-color, #e6e6e6);
   display: flex;
@@ -237,13 +237,8 @@ const LoginPage: React.FC = () => {
     }
   };
 
-  const onClickGoogleButton = () => {
-    const redirectPath = queryParams.get("redirect") || "/";
-    document.location.href = `https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=${
-      AppConfig.serverUrl
-    }/auth%2Fgoogle%2Fcallback&client_id=89013921262-762mm9l2lfq3dfv4rf185srjgq8ulihg.apps.googleusercontent.com&access_type=offline&response_type=code&prompt=consent&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&state=${encodeURIComponent(
-      redirectPath
-    )}`;
+  const onClickSsoButton = () => {
+    //handle sso
   };
 
   return (
@@ -256,16 +251,13 @@ const LoginPage: React.FC = () => {
         className="form-mobile"
         onKeyDown={(e) => e.keyCode === 13 && handleSubmit(onSubmit)(e)}
       >
-        <GoogleButton
-          onClick={onClickGoogleButton}
-          className="google-button-mobile"
-        >
-          <GoogleIcon />
-          להמשיך עם גוגל{" "}
-        </GoogleButton>
-        <OrText className="or-text-mobile">או להמשיך באימייל</OrText>
+        <SsoButton onClick={onClickSsoButton} className="google-button-mobile">
+          <SsoIcon />
+          להמשיך עם מי שאתה{" "}
+        </SsoButton>
+        <OrText className="or-text-mobile">או להמשיך עם שם משתמש וסיסמה</OrText>
         <div className="w-full mb-5">
-          <label>אימייל</label>
+          <label>מספר אישי</label>
           <InputText
             {...register("pNumber", {
               required: true,

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as Logo } from "../../assets/Logo/ColoredLogo.svg";
+import { ReactComponent as Logo } from "../../assets/Logo/DnetLogo.svg";
 import Link from "../common/Link";
 import { Divider } from "primereact/divider";
 import Button from "../common/form/Button";

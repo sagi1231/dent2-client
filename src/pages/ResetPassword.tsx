@@ -7,7 +7,7 @@ import { Message } from "primereact/message";
 import RegexValidations from "../core/validation/regexValidations";
 import FormStyle from "../components/common/form/FormStyle";
 import Button from "../components/common/form/Button";
-import { ReactComponent as Logo } from "../assets/Logo/ColoredLogo.svg";
+import { ReactComponent as Logo } from "../assets/Logo/DnetLogo.svg";
 import Link from "../components/common/Link";
 import { ResetPasswordRequestData } from "../core/services/requests/resetPassword/resetPasswordRequestData";
 import AuthHeader from "../components/auth/AuthHeader";

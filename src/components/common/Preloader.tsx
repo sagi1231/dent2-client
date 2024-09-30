@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as Logo } from "../../assets/Logo/ColoredLogo.svg";
+import { ReactComponent as Logo } from "../../assets/Logo/DnetLogo.svg";
 
 interface Props {
   children?: JSX.Element | JSX.Element[] | string;

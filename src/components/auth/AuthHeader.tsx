@@ -1,4 +1,4 @@
-import { ReactComponent as Logo } from "../../assets/Logo/ColoredLogo.svg";
+import { ReactComponent as Logo } from "../../assets/Logo/DnetLogo.svg";
 import styled from "styled-components";
 
 const Title = styled.h1`
