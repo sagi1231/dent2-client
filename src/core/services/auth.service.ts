@@ -9,6 +9,9 @@ class AuthService extends ServiceBase {
   login(data: LoginRequestData) {
     return this.post<any>("/login", data);
   }
+  logout() {
+    return this.post<void>("/logout");
+  }
   async me() {
     console.log(await this.get<User>("/me"));
 

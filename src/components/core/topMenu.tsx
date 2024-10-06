@@ -21,6 +21,7 @@ import IconButton from "../common/IconButton";
 import { Tooltip } from "primereact/tooltip";
 import { Divider } from "primereact/divider";
 import useNavigator from "../../hooks/useNavigator";
+import authService from "../../core/services/auth.service";
 
 const TopWrapper = styled.div`
   display: flex;
@@ -126,7 +127,7 @@ const TopMenu: React.FC = () => {
       label: "התנתק",
 
       command: async () => {
-        await userService.logout();
+        await authService.logout();
         document.location.href = "/login";
       },
     },

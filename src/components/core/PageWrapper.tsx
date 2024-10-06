@@ -9,7 +9,7 @@ import PrivateLayout from "./PrivateLayout";
 
 const PageWrapper: React.FC<{ Route: Route }> = ({ Route }) => {
   useEffect(() => {
-    const pageTitle = (Route.displayName || "App") + " - Ghostwrite";
+    const pageTitle = (Route.displayName || "App") + " - Dnet";
     document.title = pageTitle;
   }, [Route.displayName]);
 
