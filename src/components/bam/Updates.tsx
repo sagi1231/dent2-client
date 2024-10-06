@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import Card from "../common/Card";
-import { ReactComponent as LogoIcon } from "../../assets/Logo/ColoredIcon.svg";
 import bamService from "../../core/services/bam.service";
 import { useRecoilValue } from "recoil";
 import { bamTableState } from "../../state/bamTableState";
