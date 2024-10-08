@@ -2,7 +2,7 @@ import { useLocation, useParams } from "react-router";
 import Link from "../components/common/Link";
 import { useSearchParams } from "react-router-dom";
 import styled from "styled-components";
-import LogoIcon from "../assets/Logo/LogoIcon.png";
+import LogoIcon from "../assets/Logo/DnetIcon.png";
 
 const OverWrapper = styled.div`
   display: flex;

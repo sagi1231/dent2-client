@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import LogoIcon from "../assets/Logo/LogoIcon.png";
+import LogoIcon from "../assets/Logo/DnetIcon.png";
 import { useParams } from "react-router";
 import { PaymentStatusType } from "../core/types/paymentStatusType";
 import Link from "../components/common/Link";
